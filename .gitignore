@@ -1,0 +1,39 @@
+# Virtual environments
+venv/
+.venv/
+
+# Large training datasets & raw mail dumps
+data/
+raw data/
+
+# Python caches
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.log
+.DS_Store
+
+# Frontend dependencies & build artifacts
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+
+# Local agent configuration
+.agents/
+
+# Experimental model checkpoints and historical backups (keeps repository lightweight)
+outputs/models/backups/
+outputs/models/candidates/
+outputs/models/experiments/
+outputs/models/backup_enron_logistic_regression/
+
+# Environment secrets and credentials (never commit .env)
+**/.env
+**/.env.*
+!**/.env.example
+*.env
+backend/.env
+
+# Temporary scripts
+patch_notebook.py

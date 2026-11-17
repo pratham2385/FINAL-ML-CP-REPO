@@ -1,0 +1,484 @@
+{
+  "health_check": {
+    "status_code": 200,
+    "payload": {
+      "status": "healthy",
+      "version": "1.0.0",
+      "timestamp": "2026-11-17T07:17:29.352615+00:00",
+      "ml_pipeline": {
+        "status": "operational",
+        "models_dir": "C:\\Users\\admin\\Desktop\\ML CP\\outputs\\models",
+        "email_model_loaded": true,
+        "email_tfidf_loaded": true,
+        "url_model_loaded": true,
+        "url_features_monitored": 18
+      },
+      "database": {
+        "status": "connected",
+        "database_name": "phishing_detection_db",
+        "user": "postgres",
+        "dialect": "postgresql"
+      }
+    },
+    "passed": true
+  },
+  "plain_text_email": {
+    "status_code": 200,
+    "response": {
+      "id": 133,
+      "verdict": "Clean / Legitimate",
+      "threat_level": "SAFE",
+      "risk_score": 0.2,
+      "recommended_action": "ALLOW",
+      "email_classification": "Ham",
+      "spam_probability": 0.0016,
+      "confidence_percent": 99.84,
+      "extracted_urls": [],
+      "email_analysis": {
+        "label": "Ham",
+        "is_spam": false,
+        "spam_probability": 0.0016,
+        "ham_probability": 0.9984,
+        "confidence_percent": 99.84,
+        "cleaned_text_preview": "sprint planning agenda hi everyone please review the backlog items for our sprint planning on thursday morning at 10 am ..."
+      },
+      "url_summary": {
+        "total_urls_found": 0,
+        "phishing_urls_count": 0,
+        "phishing_urls": [],
+        "max_phishing_probability": 0.0
+      },
+      "url_details": []
+    },
+    "passed": true
+  },
+  "html_email": {
+    "status_code": 200,
+    "response": {
+      "id": 134,
+      "verdict": "Clean / Legitimate",
+      "threat_level": "SAFE",
+      "risk_score": 0.9,
+      "recommended_action": "ALLOW",
+      "email_classification": "Ham",
+      "spam_probability": 0.0091,
+      "confidence_percent": 99.09,
+      "extracted_urls": [],
+      "email_analysis": {
+        "label": "Ham",
+        "is_spam": false,
+        "spam_probability": 0.0091,
+        "ham_probability": 0.9909,
+        "confidence_percent": 99.09,
+        "cleaned_text_preview": "system maintenance notice scheduled maintenance our database servers will undergo routine upgrades on saturday from 2 am..."
+      },
+      "url_summary": {
+        "total_urls_found": 0,
+        "phishing_urls_count": 0,
+        "phishing_urls": [],
+        "max_phishing_probability": 0.0
+      },
+      "url_details": []
+    },
+    "passed": true
+  },
+  "legitimate_newsletter": {
+    "status_code": 200,
+    "response": {
+      "id": 135,
+      "verdict": "Clean / Legitimate",
+      "threat_level": "SAFE",
+      "risk_score": 3.4,
+      "recommended_action": "ALLOW",
+      "email_classification": "Ham",
+      "spam_probability": 0.0341,
+      "confidence_percent": 96.59,
+      "extracted_urls": [],
+      "email_analysis": {
+        "label": "Ham",
+        "is_spam": false,
+        "spam_probability": 0.0341,
+        "ham_probability": 0.9659,
+        "confidence_percent": 96.59,
+        "cleaned_text_preview": "o reilly programming newsletter weekly edition o reilly programming here are the latest architectural deep dives in dist..."
+      },
+      "url_summary": {
+        "total_urls_found": 0,
+        "phishing_urls_count": 0,
+        "phishing_urls": [],
+        "max_phishing_probability": 0.0
+      },
+      "url_details": []
+    },
+    "passed": true
+  },
+  "spam_email": {
+    "status_code": 200,
+    "response": {
+      "id": 136,
+      "verdict": "Spam Email",
+      "threat_level": "HIGH",
+      "risk_score": 100.0,
+      "recommended_action": "MOVE_TO_JUNK",
+      "email_classification": "Spam",
+      "spam_probability": 1.0,
+      "confidence_percent": 100.0,
+      "extracted_urls": [],
+      "email_analysis": {
+        "label": "Spam",
+        "is_spam": true,
+        "spam_probability": 1.0,
+        "ham_probability": 0.0,
+        "confidence_percent": 100.0,
+        "cleaned_text_preview": "congratulations you have won 2 500 000 usd in the international lottery dear winner your email address was selected in o..."
+      },
+      "url_summary": {
+        "total_urls_found": 0,
+        "phishing_urls_count": 0,
+        "phishing_urls": [],
+        "max_phishing_probability": 0.0
+      },
+      "url_details": []
+    },
+    "passed": true
+  },
+  "phishing_email": {
+    "status_code": 200,
+    "response": {
+      "id": 137,
+      "verdict": "Phishing Attack Detected",
+      "threat_level": "CRITICAL",
+      "risk_score": 97.5,
+      "recommended_action": "QUARANTINE_AND_BLOCK",
+      "email_classification": "Spam",
+      "spam_probability": 0.9799,
+      "confidence_percent": 97.99,
+      "extracted_urls": [
+        "http://paypal-verification-account-update.com/login"
+      ],
+      "email_analysis": {
+        "label": "Spam",
+        "is_spam": true,
+        "spam_probability": 0.9799,
+        "ham_probability": 0.0201,
+        "confidence_percent": 97.99,
+        "cleaned_text_preview": "urgent suspicious activity on your account verify within 24 hours we detected unauthorized attempts to access your accou..."
+      },
+      "url_summary": {
+        "total_urls_found": 1,
+        "phishing_urls_count": 1,
+        "phishing_urls": [
+          "http://paypal-verification-account-update.com/login"
+        ],
+        "max_phishing_probability": 0.975
+      },
+      "url_details": [
+        {
+          "url": "http://paypal-verification-account-update.com/login",
+          "label": "Phishing",
+          "is_phishing": true,
+          "phishing_probability": 0.975,
+          "legitimate_probability": 0.025,
+          "confidence_percent": 97.5,
+          "features": {
+            "URLLength": 50,
+            "DomainLength": 38,
+            "IsDomainIP": 0,
+            "NoOfSubDomain": 0,
+            "HasObfuscation": 0,
+            "NoOfObfuscatedChar": 0,
+            "ObfuscationRatio": 0.0,
+            "NoOfLettersInURL": 38,
+            "LetterRatioInURL": 0.76,
+            "NoOfDegitsInURL": 0,
+            "DegitRatioInURL": 0.0,
+            "NoOfEqualsInURL": 0,
+            "NoOfQMarkInURL": 0,
+            "NoOfAmpersandInURL": 0,
+            "NoOfOtherSpecialCharsInURL": 5,
+            "SpacialCharRatioInURL": 0.1,
+            "IsHTTPS": 0,
+            "TLDLength": 3
+          }
+        }
+      ]
+    },
+    "passed": true
+  },
+  "multiple_urls_email": {
+    "status_code": 200,
+    "response": {
+      "id": 138,
+      "verdict": "Phishing Attack Detected",
+      "threat_level": "CRITICAL",
+      "risk_score": 97.5,
+      "recommended_action": "QUARANTINE_AND_BLOCK",
+      "email_classification": "Ham",
+      "spam_probability": 0.3919,
+      "confidence_percent": 60.81,
+      "extracted_urls": [
+        "https://google.com",
+        "https://github.com",
+        "http://paypal-verification-account-update.com/login"
+      ],
+      "email_analysis": {
+        "label": "Ham",
+        "is_spam": false,
+        "spam_probability": 0.3919,
+        "ham_probability": 0.6081,
+        "confidence_percent": 60.81,
+        "cleaned_text_preview": "security advisory and verification refer to official documentation at or however verify your credentials here"
+      },
+      "url_summary": {
+        "total_urls_found": 3,
+        "phishing_urls_count": 1,
+        "phishing_urls": [
+          "http://paypal-verification-account-update.com/login"
+        ],
+        "max_phishing_probability": 0.975
+      },
+      "url_details": [
+        {
+          "url": "https://google.com",
+          "label": "Legitimate",
+          "is_phishing": false,
+          "phishing_probability": 0.0018,
+          "legitimate_probability": 0.9982,
+          "confidence_percent": 99.82,
+          "features": {
+            "URLLength": 17,
+            "DomainLength": 10,
+            "IsDomainIP": 0,
+            "NoOfSubDomain": 0,
+            "HasObfuscation": 0,
+            "NoOfObfuscatedChar": 0,
+            "ObfuscationRatio": 0.0,
+            "NoOfLettersInURL": 8,
+            "LetterRatioInURL": 0.471,
+            "NoOfDegitsInURL": 0,
+            "DegitRatioInURL": 0.0,
+            "NoOfEqualsInURL": 0,
+            "NoOfQMarkInURL": 0,
+            "NoOfAmpersandInURL": 0,
+            "NoOfOtherSpecialCharsInURL": 1,
+            "SpacialCharRatioInURL": 0.059,
+            "IsHTTPS": 1,
+            "TLDLength": 3
+          }
+        },
+        {
+          "url": "https://github.com",
+          "label": "Legitimate",
+          "is_phishing": false,
+          "phishing_probability": 0.0018,
+          "legitimate_probability": 0.9982,
+          "confidence_percent": 99.82,
+          "features": {
+            "URLLength": 17,
+            "DomainLength": 10,
+            "IsDomainIP": 0,
+            "NoOfSubDomain": 0,
+            "HasObfuscation": 0,
+            "NoOfObfuscatedChar": 0,
+            "ObfuscationRatio": 0.0,
+            "NoOfLettersInURL": 8,
+            "LetterRatioInURL": 0.471,
+            "NoOfDegitsInURL": 0,
+            "DegitRatioInURL": 0.0,
+            "NoOfEqualsInURL": 0,
+            "NoOfQMarkInURL": 0,
+            "NoOfAmpersandInURL": 0,
+            "NoOfOtherSpecialCharsInURL": 1,
+            "SpacialCharRatioInURL": 0.059,
+            "IsHTTPS": 1,
+            "TLDLength": 3
+          }
+        },
+        {
+          "url": "http://paypal-verification-account-update.com/login",
+          "label": "Phishing",
+          "is_phishing": true,
+          "phishing_probability": 0.975,
+          "legitimate_probability": 0.025,
+          "confidence_percent": 97.5,
+          "features": {
+            "URLLength": 50,
+            "DomainLength": 38,
+            "IsDomainIP": 0,
+            "NoOfSubDomain": 0,
+            "HasObfuscation": 0,
+            "NoOfObfuscatedChar": 0,
+            "ObfuscationRatio": 0.0,
+            "NoOfLettersInURL": 38,
+            "LetterRatioInURL": 0.76,
+            "NoOfDegitsInURL": 0,
+            "DegitRatioInURL": 0.0,
+            "NoOfEqualsInURL": 0,
+            "NoOfQMarkInURL": 0,
+            "NoOfAmpersandInURL": 0,
+            "NoOfOtherSpecialCharsInURL": 5,
+            "SpacialCharRatioInURL": 0.1,
+            "IsHTTPS": 0,
+            "TLDLength": 3
+          }
+        }
+      ]
+    },
+    "passed": true
+  },
+  "url_only_analysis": {
+    "legitimate": {
+      "id": 139,
+      "url": "https://microsoft.com",
+      "classification": "Legitimate",
+      "is_phishing": false,
+      "phishing_probability": 0.0012,
+      "legitimate_probability": 0.9988,
+      "confidence_percent": 99.88,
+      "verdict": "Legitimate URL",
+      "risk_score": 0.1,
+      "recommended_action": "ALLOW",
+      "features": {
+        "URLLength": 20,
+        "DomainLength": 13,
+        "IsDomainIP": 0,
+        "NoOfSubDomain": 0,
+        "HasObfuscation": 0,
+        "NoOfObfuscatedChar": 0,
+        "ObfuscationRatio": 0.0,
+        "NoOfLettersInURL": 11,
+        "LetterRatioInURL": 0.55,
+        "NoOfDegitsInURL": 0,
+        "DegitRatioInURL": 0.0,
+        "NoOfEqualsInURL": 0,
+        "NoOfQMarkInURL": 0,
+        "NoOfAmpersandInURL": 0,
+        "NoOfOtherSpecialCharsInURL": 1,
+        "SpacialCharRatioInURL": 0.05,
+        "IsHTTPS": 1,
+        "TLDLength": 3
+      }
+    },
+    "phishing": {
+      "id": 140,
+      "url": "http://paypal-verification-account-update.com/login",
+      "classification": "Phishing",
+      "is_phishing": true,
+      "phishing_probability": 0.975,
+      "legitimate_probability": 0.025,
+      "confidence_percent": 97.5,
+      "verdict": "Phishing URL Detected",
+      "risk_score": 97.5,
+      "recommended_action": "BLOCK",
+      "features": {
+        "URLLength": 50,
+        "DomainLength": 38,
+        "IsDomainIP": 0,
+        "NoOfSubDomain": 0,
+        "HasObfuscation": 0,
+        "NoOfObfuscatedChar": 0,
+        "ObfuscationRatio": 0.0,
+        "NoOfLettersInURL": 38,
+        "LetterRatioInURL": 0.76,
+        "NoOfDegitsInURL": 0,
+        "DegitRatioInURL": 0.0,
+        "NoOfEqualsInURL": 0,
+        "NoOfQMarkInURL": 0,
+        "NoOfAmpersandInURL": 0,
+        "NoOfOtherSpecialCharsInURL": 5,
+        "SpacialCharRatioInURL": 0.1,
+        "IsHTTPS": 0,
+        "TLDLength": 3
+      }
+    },
+    "passed": true
+  },
+  "malformed_inputs": {
+    "empty_email_status": 422,
+    "whitespace_email_status": 422,
+    "missing_url_status": 422,
+    "invalid_ext_status": 400,
+    "empty_file_status": 400,
+    "passed": true
+  },
+  "eml_upload": {
+    "status_code": 200,
+    "response": {
+      "id": 141,
+      "eml_metadata": {
+        "filename": "04_legitimate_newsletter.eml",
+        "file_size_bytes": 423,
+        "sender": "test-sender@example.com",
+        "recipient": "test-recipient@example.com",
+        "date": "Mon, 16 Nov 2026 17:39:45 +0000",
+        "subject": "Weekly Product Newsletter",
+        "message_id": null
+      },
+      "verdict": "Clean / Legitimate",
+      "threat_level": "SAFE",
+      "overall_risk_score": 4.2,
+      "recommended_action": "ALLOW",
+      "email_classification": "Ham",
+      "spam_probability": 0.0425,
+      "confidence_percent": 95.75,
+      "extracted_urls": [],
+      "email_analysis": {
+        "label": "Ham",
+        "is_spam": false,
+        "spam_probability": 0.0425,
+        "ham_probability": 0.9575,
+        "confidence_percent": 95.75,
+        "cleaned_text_preview": "weekly product newsletter hello here are this week s product updates and articles read the release notes on our official..."
+      },
+      "url_summary": {
+        "total_urls_found": 0,
+        "phishing_urls_count": 0,
+        "phishing_urls": [],
+        "max_phishing_probability": 0.0
+      },
+      "url_details": []
+    },
+    "passed": true
+  },
+  "database_history": {
+    "total": 141,
+    "latest_record": {
+      "id": 141,
+      "analysis_type": "file",
+      "created_at": "2026-11-17T12:47:31.028753+05:30",
+      "subject": "Weekly Product Newsletter",
+      "submitted_url": null,
+      "email_prediction": "Ham",
+      "spam_probability": 0.0425,
+      "url_count": 0,
+      "overall_verdict": "Clean / Legitimate",
+      "threat_level": "SAFE",
+      "risk_score": 4.2,
+      "recommended_action": "ALLOW"
+    },
+    "passed": true
+  },
+  "database_stats": {
+    "stats": {
+      "total_analyses": 141,
+      "spam_count": 34,
+      "phishing_count": 48,
+      "safe_count": 60,
+      "threat_percentage": 57.4,
+      "threat_distribution": {
+        "CRITICAL": 48,
+        "HIGH": 21,
+        "MEDIUM": 9,
+        "LOW_SUSPICIOUS": 3,
+        "SAFE": 60
+      },
+      "type_distribution": {
+        "email": 21,
+        "url": 80,
+        "file": 40
+      }
+    },
+    "passed": true
+  },
+  "overall_passed": true
+}

@@ -1,0 +1,776 @@
+{
+  "logistic_regression": {
+    "name": "Logistic Regression",
+    "params": {
+      "C": 5.0,
+      "class_weight": "balanced",
+      "max_iter": 1000,
+      "random_state": 42
+    },
+    "selected_threshold": 0.75,
+    "train_time_sec": 2.378,
+    "pred_latency_ms": 0.002,
+    "validation": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9872,
+        "spam_precision": 0.9833,
+        "spam_recall": 0.9872,
+        "spam_f1": 0.9853,
+        "ham_precision": 0.9902,
+        "ham_recall": 0.9872,
+        "fpr": 0.0128,
+        "fpr_percentage": 1.28,
+        "roc_auc": 0.9991,
+        "pr_auc": 0.9987,
+        "brier_score": 0.012,
+        "confusion_matrix": {
+          "tn": 3230,
+          "fp": 42,
+          "fn": 32,
+          "tp": 2475
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.75,
+        "accuracy": 0.9806,
+        "spam_precision": 0.9942,
+        "spam_recall": 0.9609,
+        "spam_f1": 0.9773,
+        "ham_precision": 0.9708,
+        "ham_recall": 0.9957,
+        "fpr": 0.0043,
+        "fpr_percentage": 0.43,
+        "roc_auc": 0.9991,
+        "pr_auc": 0.9987,
+        "brier_score": 0.012,
+        "confusion_matrix": {
+          "tn": 3258,
+          "fp": 14,
+          "fn": 98,
+          "tp": 2409
+        }
+      },
+      "ece": 0.0306
+    },
+    "test": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9882,
+        "spam_precision": 0.983,
+        "spam_recall": 0.99,
+        "spam_f1": 0.9865,
+        "ham_precision": 0.9923,
+        "ham_recall": 0.9869,
+        "fpr": 0.0131,
+        "fpr_percentage": 1.31,
+        "roc_auc": 0.999,
+        "pr_auc": 0.9985,
+        "brier_score": 0.0117,
+        "confusion_matrix": {
+          "tn": 3230,
+          "fp": 43,
+          "fn": 25,
+          "tp": 2481
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.75,
+        "accuracy": 0.983,
+        "spam_precision": 0.9955,
+        "spam_recall": 0.9653,
+        "spam_f1": 0.9801,
+        "ham_precision": 0.974,
+        "ham_recall": 0.9966,
+        "fpr": 0.0034,
+        "fpr_percentage": 0.34,
+        "roc_auc": 0.999,
+        "pr_auc": 0.9985,
+        "brier_score": 0.0117,
+        "confusion_matrix": {
+          "tn": 3262,
+          "fp": 11,
+          "fn": 87,
+          "tp": 2419
+        }
+      },
+      "ece": 0.0313
+    },
+    "hard_ham_holdout": {
+      "total_samples": 250,
+      "false_positives_default_0_50": 146,
+      "fpr_default_percentage": 58.4,
+      "false_positives_optimal_thresh": 95,
+      "fpr_optimal_percentage": 38.0,
+      "mean_spam_probability": 0.573
+    },
+    "synthetic_18_emails": {
+      "total_samples": 18,
+      "accuracy_default": 0.7778,
+      "accuracy_optimal": 0.8889,
+      "optimal_false_positives": 2,
+      "optimal_false_negatives": 0,
+      "email_details": [
+        {
+          "filename": "01_legitimate_meeting.eml",
+          "expected": "ham",
+          "p_spam": 0.0114,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "02_legitimate_invoice.eml",
+          "expected": "ham",
+          "p_spam": 0.4884,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "03_legitimate_password_notice.eml",
+          "expected": "ham",
+          "p_spam": 0.5523,
+          "pred_default": "spam",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "04_legitimate_newsletter.eml",
+          "expected": "ham",
+          "p_spam": 0.7207,
+          "pred_default": "spam",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "05_legitimate_assignment.eml",
+          "expected": "ham",
+          "p_spam": 0.1417,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "06_spam_prize.eml",
+          "expected": "spam",
+          "p_spam": 0.9727,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "07_spam_weight_loss.eml",
+          "expected": "spam",
+          "p_spam": 0.9975,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "08_spam_crypto.eml",
+          "expected": "spam",
+          "p_spam": 0.9952,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "09_spam_lottery.eml",
+          "expected": "spam",
+          "p_spam": 0.9881,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "10_spam_free_gift.eml",
+          "expected": "spam",
+          "p_spam": 0.9835,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "11_phishing_account.eml",
+          "expected": "spam",
+          "p_spam": 0.973,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "12_phishing_bank.eml",
+          "expected": "spam",
+          "p_spam": 0.9554,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "13_phishing_delivery.eml",
+          "expected": "spam",
+          "p_spam": 0.7716,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "14_phishing_mailbox.eml",
+          "expected": "spam",
+          "p_spam": 0.9098,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "15_phishing_otp.eml",
+          "expected": "spam",
+          "p_spam": 0.9152,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "16_mixed_work_offer.eml",
+          "expected": "ham",
+          "p_spam": 0.4871,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "17_mixed_account_alert.eml",
+          "expected": "ham",
+          "p_spam": 0.8606,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        },
+        {
+          "filename": "18_mixed_sale.eml",
+          "expected": "ham",
+          "p_spam": 0.9475,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        }
+      ]
+    }
+  },
+  "linear_svc": {
+    "name": "Linear SVM (Sigmoid-Calibrated)",
+    "params": {
+      "C": 2.0,
+      "method": "sigmoid",
+      "cv": 5,
+      "random_state": 42
+    },
+    "selected_threshold": 0.77,
+    "train_time_sec": 5.469,
+    "pred_latency_ms": 0.0061,
+    "validation": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9893,
+        "spam_precision": 0.9876,
+        "spam_recall": 0.9876,
+        "spam_f1": 0.9876,
+        "ham_precision": 0.9905,
+        "ham_recall": 0.9905,
+        "fpr": 0.0095,
+        "fpr_percentage": 0.95,
+        "roc_auc": 0.9994,
+        "pr_auc": 0.9992,
+        "brier_score": 0.008,
+        "confusion_matrix": {
+          "tn": 3241,
+          "fp": 31,
+          "fn": 31,
+          "tp": 2476
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.77,
+        "accuracy": 0.9862,
+        "spam_precision": 0.9935,
+        "spam_recall": 0.9745,
+        "spam_f1": 0.9839,
+        "ham_precision": 0.9807,
+        "ham_recall": 0.9951,
+        "fpr": 0.0049,
+        "fpr_percentage": 0.49,
+        "roc_auc": 0.9994,
+        "pr_auc": 0.9992,
+        "brier_score": 0.008,
+        "confusion_matrix": {
+          "tn": 3256,
+          "fp": 16,
+          "fn": 64,
+          "tp": 2443
+        }
+      },
+      "ece": 0.0023
+    },
+    "test": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9912,
+        "spam_precision": 0.9896,
+        "spam_recall": 0.99,
+        "spam_f1": 0.9898,
+        "ham_precision": 0.9924,
+        "ham_recall": 0.9921,
+        "fpr": 0.0079,
+        "fpr_percentage": 0.79,
+        "roc_auc": 0.9993,
+        "pr_auc": 0.9989,
+        "brier_score": 0.0075,
+        "confusion_matrix": {
+          "tn": 3247,
+          "fp": 26,
+          "fn": 25,
+          "tp": 2481
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.77,
+        "accuracy": 0.9886,
+        "spam_precision": 0.9943,
+        "spam_recall": 0.9792,
+        "spam_f1": 0.9867,
+        "ham_precision": 0.9843,
+        "ham_recall": 0.9957,
+        "fpr": 0.0043,
+        "fpr_percentage": 0.43,
+        "roc_auc": 0.9993,
+        "pr_auc": 0.9989,
+        "brier_score": 0.0075,
+        "confusion_matrix": {
+          "tn": 3259,
+          "fp": 14,
+          "fn": 52,
+          "tp": 2454
+        }
+      },
+      "ece": 0.003
+    },
+    "hard_ham_holdout": {
+      "total_samples": 250,
+      "false_positives_default_0_50": 133,
+      "fpr_default_percentage": 53.2,
+      "false_positives_optimal_thresh": 102,
+      "fpr_optimal_percentage": 40.8,
+      "mean_spam_probability": 0.5204
+    },
+    "synthetic_18_emails": {
+      "total_samples": 18,
+      "accuracy_default": 0.7778,
+      "accuracy_optimal": 0.8333,
+      "optimal_false_positives": 3,
+      "optimal_false_negatives": 0,
+      "email_details": [
+        {
+          "filename": "01_legitimate_meeting.eml",
+          "expected": "ham",
+          "p_spam": 0.0001,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "02_legitimate_invoice.eml",
+          "expected": "ham",
+          "p_spam": 0.4175,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "03_legitimate_password_notice.eml",
+          "expected": "ham",
+          "p_spam": 0.3217,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "04_legitimate_newsletter.eml",
+          "expected": "ham",
+          "p_spam": 0.8045,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        },
+        {
+          "filename": "05_legitimate_assignment.eml",
+          "expected": "ham",
+          "p_spam": 0.0106,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "06_spam_prize.eml",
+          "expected": "spam",
+          "p_spam": 0.9985,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "07_spam_weight_loss.eml",
+          "expected": "spam",
+          "p_spam": 1.0,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "08_spam_crypto.eml",
+          "expected": "spam",
+          "p_spam": 0.9999,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "09_spam_lottery.eml",
+          "expected": "spam",
+          "p_spam": 0.9998,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "10_spam_free_gift.eml",
+          "expected": "spam",
+          "p_spam": 0.9986,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "11_phishing_account.eml",
+          "expected": "spam",
+          "p_spam": 0.9992,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "12_phishing_bank.eml",
+          "expected": "spam",
+          "p_spam": 0.9968,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "13_phishing_delivery.eml",
+          "expected": "spam",
+          "p_spam": 0.9394,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "14_phishing_mailbox.eml",
+          "expected": "spam",
+          "p_spam": 0.9809,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "15_phishing_otp.eml",
+          "expected": "spam",
+          "p_spam": 0.9923,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "16_mixed_work_offer.eml",
+          "expected": "ham",
+          "p_spam": 0.5722,
+          "pred_default": "spam",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "17_mixed_account_alert.eml",
+          "expected": "ham",
+          "p_spam": 0.9829,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        },
+        {
+          "filename": "18_mixed_sale.eml",
+          "expected": "ham",
+          "p_spam": 0.9859,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        }
+      ]
+    }
+  },
+  "multinomial_nb": {
+    "name": "Multinomial Naive Bayes",
+    "params": {
+      "alpha": 0.01
+    },
+    "selected_threshold": 0.42,
+    "train_time_sec": 0.089,
+    "pred_latency_ms": 0.0054,
+    "validation": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9865,
+        "spam_precision": 0.9943,
+        "spam_recall": 0.9745,
+        "spam_f1": 0.9843,
+        "ham_precision": 0.9807,
+        "ham_recall": 0.9957,
+        "fpr": 0.0043,
+        "fpr_percentage": 0.43,
+        "roc_auc": 0.9991,
+        "pr_auc": 0.9989,
+        "brier_score": 0.0112,
+        "confusion_matrix": {
+          "tn": 3258,
+          "fp": 14,
+          "fn": 64,
+          "tp": 2443
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.42,
+        "accuracy": 0.9875,
+        "spam_precision": 0.9935,
+        "spam_recall": 0.9777,
+        "spam_f1": 0.9855,
+        "ham_precision": 0.9831,
+        "ham_recall": 0.9951,
+        "fpr": 0.0049,
+        "fpr_percentage": 0.49,
+        "roc_auc": 0.9991,
+        "pr_auc": 0.9989,
+        "brier_score": 0.0112,
+        "confusion_matrix": {
+          "tn": 3256,
+          "fp": 16,
+          "fn": 56,
+          "tp": 2451
+        }
+      },
+      "ece": 0.0114
+    },
+    "test": {
+      "default_metrics": {
+        "threshold": 0.5,
+        "accuracy": 0.9872,
+        "spam_precision": 0.9931,
+        "spam_recall": 0.9773,
+        "spam_f1": 0.9851,
+        "ham_precision": 0.9828,
+        "ham_recall": 0.9948,
+        "fpr": 0.0052,
+        "fpr_percentage": 0.52,
+        "roc_auc": 0.9989,
+        "pr_auc": 0.9987,
+        "brier_score": 0.0103,
+        "confusion_matrix": {
+          "tn": 3256,
+          "fp": 17,
+          "fn": 57,
+          "tp": 2449
+        }
+      },
+      "optimal_metrics": {
+        "threshold": 0.42,
+        "accuracy": 0.9886,
+        "spam_precision": 0.9919,
+        "spam_recall": 0.9816,
+        "spam_f1": 0.9868,
+        "ham_precision": 0.9861,
+        "ham_recall": 0.9939,
+        "fpr": 0.0061,
+        "fpr_percentage": 0.61,
+        "roc_auc": 0.9989,
+        "pr_auc": 0.9987,
+        "brier_score": 0.0103,
+        "confusion_matrix": {
+          "tn": 3253,
+          "fp": 20,
+          "fn": 46,
+          "tp": 2460
+        }
+      },
+      "ece": 0.0084
+    },
+    "hard_ham_holdout": {
+      "total_samples": 250,
+      "false_positives_default_0_50": 108,
+      "fpr_default_percentage": 43.2,
+      "false_positives_optimal_thresh": 110,
+      "fpr_optimal_percentage": 44.0,
+      "mean_spam_probability": 0.4293
+    },
+    "synthetic_18_emails": {
+      "total_samples": 18,
+      "accuracy_default": 0.8889,
+      "accuracy_optimal": 0.9444,
+      "optimal_false_positives": 1,
+      "optimal_false_negatives": 0,
+      "email_details": [
+        {
+          "filename": "01_legitimate_meeting.eml",
+          "expected": "ham",
+          "p_spam": 0.0,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "02_legitimate_invoice.eml",
+          "expected": "ham",
+          "p_spam": 0.0063,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "03_legitimate_password_notice.eml",
+          "expected": "ham",
+          "p_spam": 0.0226,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "04_legitimate_newsletter.eml",
+          "expected": "ham",
+          "p_spam": 0.2853,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "05_legitimate_assignment.eml",
+          "expected": "ham",
+          "p_spam": 0.0005,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "06_spam_prize.eml",
+          "expected": "spam",
+          "p_spam": 0.9999,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "07_spam_weight_loss.eml",
+          "expected": "spam",
+          "p_spam": 1.0,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "08_spam_crypto.eml",
+          "expected": "spam",
+          "p_spam": 0.9998,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "09_spam_lottery.eml",
+          "expected": "spam",
+          "p_spam": 1.0,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "10_spam_free_gift.eml",
+          "expected": "spam",
+          "p_spam": 0.9999,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "11_phishing_account.eml",
+          "expected": "spam",
+          "p_spam": 0.9945,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "12_phishing_bank.eml",
+          "expected": "spam",
+          "p_spam": 0.9087,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "13_phishing_delivery.eml",
+          "expected": "spam",
+          "p_spam": 0.7377,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "14_phishing_mailbox.eml",
+          "expected": "spam",
+          "p_spam": 0.4274,
+          "pred_default": "ham",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "15_phishing_otp.eml",
+          "expected": "spam",
+          "p_spam": 0.9932,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": true
+        },
+        {
+          "filename": "16_mixed_work_offer.eml",
+          "expected": "ham",
+          "p_spam": 0.2735,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "17_mixed_account_alert.eml",
+          "expected": "ham",
+          "p_spam": 0.2676,
+          "pred_default": "ham",
+          "pred_optimal": "ham",
+          "correct_optimal": true
+        },
+        {
+          "filename": "18_mixed_sale.eml",
+          "expected": "ham",
+          "p_spam": 0.9855,
+          "pred_default": "spam",
+          "pred_optimal": "spam",
+          "correct_optimal": false
+        }
+      ]
+    }
+  }
+}

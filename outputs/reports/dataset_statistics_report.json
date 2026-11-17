@@ -1,0 +1,174 @@
+{
+  "summary": {
+    "initial_raw_samples": 42656,
+    "empty_removed": 54,
+    "conflicting_samples_removed": 0,
+    "exact_duplicates_removed": 3827,
+    "final_clean_unique_corpus": 38775,
+    "hard_ham_holdout_samples": 250,
+    "core_partitioned_samples": 38525
+  },
+  "raw_corpora_counts": {
+    "enron": {
+      "total": 33716,
+      "ham": 16545,
+      "spam": 17171,
+      "empty_subject_or_body": 51
+    },
+    "spamassassin": {
+      "total": 6047,
+      "malformed_files": 0,
+      "sub_corpora": {
+        "easy_ham": 2500,
+        "easy_ham_2": 1400,
+        "hard_ham": 250,
+        "spam": 500,
+        "spam_2": 1397
+      }
+    },
+    "lingspam": {
+      "total": 2893,
+      "ham": 2412,
+      "spam": 481,
+      "malformed_files": 0
+    }
+  },
+  "cleaned_corpus_class_distribution": {
+    "total": 38775,
+    "ham": 22064,
+    "spam": 16711,
+    "ham_percentage": 56.9,
+    "spam_percentage": 43.1,
+    "source_breakdown": {
+      "enron": {
+        "total": 30012,
+        "ham": 15550,
+        "spam": 14462,
+        "ham_ratio": 0.5181,
+        "spam_ratio": 0.4819
+      },
+      "lingspam": {
+        "total": 2873,
+        "ham": 2405,
+        "spam": 468,
+        "ham_ratio": 0.8371,
+        "spam_ratio": 0.1629
+      },
+      "spamassassin": {
+        "total": 5890,
+        "ham": 4109,
+        "spam": 1781,
+        "ham_ratio": 0.6976,
+        "spam_ratio": 0.3024
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "total": 26967,
+      "ham": 15269,
+      "spam": 11698,
+      "ham_percentage": 56.62,
+      "spam_percentage": 43.38,
+      "source_breakdown": {
+        "enron": {
+          "total": 21008,
+          "ham": 10885,
+          "spam": 10123,
+          "ham_ratio": 0.5181,
+          "spam_ratio": 0.4819
+        },
+        "lingspam": {
+          "total": 2011,
+          "ham": 1683,
+          "spam": 328,
+          "ham_ratio": 0.8369,
+          "spam_ratio": 0.1631
+        },
+        "spamassassin": {
+          "total": 3948,
+          "ham": 2701,
+          "spam": 1247,
+          "ham_ratio": 0.6841,
+          "spam_ratio": 0.3159
+        }
+      }
+    },
+    "val": {
+      "total": 5779,
+      "ham": 3272,
+      "spam": 2507,
+      "ham_percentage": 56.62,
+      "spam_percentage": 43.38,
+      "source_breakdown": {
+        "enron": {
+          "total": 4502,
+          "ham": 2332,
+          "spam": 2170,
+          "ham_ratio": 0.518,
+          "spam_ratio": 0.482
+        },
+        "lingspam": {
+          "total": 431,
+          "ham": 361,
+          "spam": 70,
+          "ham_ratio": 0.8376,
+          "spam_ratio": 0.1624
+        },
+        "spamassassin": {
+          "total": 846,
+          "ham": 579,
+          "spam": 267,
+          "ham_ratio": 0.6844,
+          "spam_ratio": 0.3156
+        }
+      }
+    },
+    "test": {
+      "total": 5779,
+      "ham": 3273,
+      "spam": 2506,
+      "ham_percentage": 56.64,
+      "spam_percentage": 43.36,
+      "source_breakdown": {
+        "enron": {
+          "total": 4502,
+          "ham": 2333,
+          "spam": 2169,
+          "ham_ratio": 0.5182,
+          "spam_ratio": 0.4818
+        },
+        "lingspam": {
+          "total": 431,
+          "ham": 361,
+          "spam": 70,
+          "ham_ratio": 0.8376,
+          "spam_ratio": 0.1624
+        },
+        "spamassassin": {
+          "total": 846,
+          "ham": 579,
+          "spam": 267,
+          "ham_ratio": 0.6844,
+          "spam_ratio": 0.3156
+        }
+      }
+    },
+    "hard_ham_holdout": {
+      "total": 250,
+      "ham": 250,
+      "spam": 0,
+      "source": "spamassassin",
+      "sub_corpus": "hard_ham"
+    }
+  },
+  "leakage_verification": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "train_hard_ham_overlap": 0,
+    "val_hard_ham_overlap": 0,
+    "test_hard_ham_overlap": 0,
+    "leakage_free": true
+  }
+}

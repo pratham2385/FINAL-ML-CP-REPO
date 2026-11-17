@@ -1,0 +1,119 @@
+{
+  "project": "Machine Learning-Based Email Spam and Phishing Detection System",
+  "timestamp": "2026-11-17T12:47:00",
+  "version": "2.0.0-phase8-final",
+  "email_subsystem": {
+    "model_architecture": "MultinomialNB(alpha=0.01, fit_prior=False)",
+    "vectorizer": "TfidfVectorizer(ngram_range=(1,2), min_df=5, max_df=0.95, sublinear_tf=True)",
+    "vocabulary_size": 268754,
+    "preprocessing_pipeline": "Variant C (HTML structure cleaning, style/script stripping, entity unescaping, block spacing, controlled opt-out boilerplate consolidation)",
+    "decision_threshold": 0.43,
+    "training_dataset": {
+      "source": "Unified Multi-Corpus Augmented (Enron + SpamAssassin + Ling-Spam + CEAS-08 + TREC-07 + TREC-06)",
+      "total_training_samples": 37890,
+      "classes": {
+        "ham": 26192,
+        "spam": 11698
+      }
+    },
+    "validation_metrics": {
+      "evaluation_purpose": "Used strictly for hyperparameter validation and decision threshold tuning",
+      "samples": 5779,
+      "threshold": 0.43,
+      "accuracy": 0.9829,
+      "spam_precision": 0.9934,
+      "spam_recall": 0.9669,
+      "spam_f1": 0.98,
+      "ham_precision": 0.9751,
+      "ham_recall": 0.9951,
+      "false_positive_rate_percent": 0.49,
+      "false_negative_rate_percent": 3.31,
+      "roc_auc": 0.9988,
+      "pr_auc": 0.9985,
+      "brier_score": 0.0138,
+      "confusion_matrix": {
+        "tn": 3256,
+        "fp": 16,
+        "fn": 83,
+        "tp": 2424
+      }
+    },
+    "test_metrics": {
+      "evaluation_purpose": "Independent blind evaluation on held-out test split (untouched during training and threshold tuning)",
+      "samples": 5779,
+      "threshold": 0.43,
+      "accuracy": 0.9851,
+      "spam_precision": 0.9927,
+      "spam_recall": 0.9729,
+      "spam_f1": 0.9827,
+      "ham_precision": 0.9795,
+      "ham_recall": 0.9945,
+      "false_positive_rate_percent": 0.55,
+      "false_negative_rate_percent": 2.71,
+      "roc_auc": 0.9984,
+      "pr_auc": 0.9983,
+      "brier_score": 0.0126,
+      "confusion_matrix": {
+        "tn": 3255,
+        "fp": 18,
+        "fn": 68,
+        "tp": 2438
+      }
+    },
+    "hard_ham_diagnostic_metrics": {
+      "evaluation_purpose": "Diagnostic tracking of commercial marketing newsletter and e-zine false positive regression",
+      "disclosure": "The 250 Hard Ham samples were analyzed in Phase 4 and Phase 5 and are NOT an untouched blind holdout. These numbers reflect progress on known historical false positive failure modes.",
+      "total_samples": 250,
+      "false_positives": 45,
+      "false_positive_rate_percent": 18.0,
+      "mean_spam_probability": 0.1562,
+      "median_spam_probability": 0.0004,
+      "historical_progression": {
+        "phase3_baseline_fp_count": 110,
+        "phase5_preprocessing_variant_c_fp_count": 98,
+        "phase7_model_b2_promoted_fp_count": 45,
+        "overall_fp_reduction_percent": 59.09
+      }
+    },
+    "synthetic_test_metrics": {
+      "evaluation_purpose": "Adversarial behavioral evaluation across 18 synthetic edge-case emails",
+      "disclosure": "Synthetic emails are curated functional unit tests and are NOT statistically representative of real-world corporate or consumer traffic volume.",
+      "total_samples": 18,
+      "correct_predictions": 17,
+      "accuracy_percent": 94.44,
+      "false_positives": 1,
+      "false_negatives": 0,
+      "phishing_spam_recall_percent": 100.0,
+      "mismatches": [
+        {
+          "filename": "18_mixed_sale.eml",
+          "expected": "ham",
+          "predicted": "spam",
+          "reason": "Promotional discount text ('50% off', 'flash sale') without corporate branding triggers commercial spam token weights."
+        }
+      ]
+    }
+  },
+  "url_subsystem": {
+    "model_architecture": "RandomForestClassifier(n_estimators=400, max_depth=25, max_features='sqrt', min_samples_leaf=1)",
+    "features_monitored": 18,
+    "classes": {
+      "0": "phishing",
+      "1": "legitimate"
+    },
+    "test_metrics": {
+      "accuracy": 0.9973,
+      "phishing_precision": 0.9992,
+      "phishing_recall": 0.9946,
+      "phishing_f1": 0.9968,
+      "roc_auc": 0.9983
+    },
+    "disclosure": "URL classifier performance is bounded by lexical features and PhiUSIIL dataset characteristics. Canonical root and subdomain parsing prevent overfitting to specific apex domains."
+  },
+  "known_limitations": [
+    "Spam classification is not identical to dedicated phishing intent detection: highly conversational spear-phishing without bulk keywords relies on embedded hyperlink extraction.",
+    "Hard-ham evaluation is no longer an untouched holdout and must be reported solely as a diagnostic measure.",
+    "Synthetic email suite tests specific functional boundaries (invoices, newsletters, lures) but cannot substitute for live production email stream monitoring.",
+    "Lexical URL analysis cannot detect malicious content hosted on hijacked legitimate infrastructure or zero-day compromised subdomains."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+    "task": "url_phishing_detection",
+    "feature_names": [
+        "URLLength",
+        "DomainLength",
+        "IsDomainIP",
+        "NoOfSubDomain",
+        "HasObfuscation",
+        "NoOfObfuscatedChar",
+        "ObfuscationRatio",
+        "NoOfLettersInURL",
+        "LetterRatioInURL",
+        "NoOfDegitsInURL",
+        "DegitRatioInURL",
+        "NoOfEqualsInURL",
+        "NoOfQMarkInURL",
+        "NoOfAmpersandInURL",
+        "NoOfOtherSpecialCharsInURL",
+        "SpacialCharRatioInURL",
+        "IsHTTPS",
+        "TLDLength"
+    ],
+    "feature_count": 18,
+    "label_mapping": {
+        "0": "Phishing",
+        "1": "Legitimate"
+    }
+}

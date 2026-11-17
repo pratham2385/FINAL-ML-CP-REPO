@@ -1,0 +1,22 @@
+{
+    "project": "Machine Learning-Based Email Spam and Phishing Detection System",
+    "version": "1.0",
+    "email": {
+        "model_file": "email/email_spam_model.joblib",
+        "vectorizer_file": "email/email_tfidf_vectorizer.joblib",
+        "metadata_file": "email/email_model_metadata.json",
+        "label_mapping": {
+            "0": "Ham",
+            "1": "Spam"
+        }
+    },
+    "url": {
+        "model_file": "url/url_phishing_model.joblib",
+        "feature_config_file": "url/url_feature_config.json",
+        "metadata_file": "url/url_model_metadata.json",
+        "label_mapping": {
+            "0": "Phishing",
+            "1": "Legitimate"
+        }
+    }
+}

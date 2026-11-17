@@ -1,0 +1,19 @@
+{
+    "task": "url_phishing_detection",
+    "model": "RandomForestClassifier",
+    "hyperparameters": {
+        "n_estimators": 400,
+        "max_depth": 25,
+        "min_samples_leaf": 1,
+        "max_features": "sqrt",
+        "random_state": 42
+    },
+    "label_mapping": {
+        "0": "Phishing",
+        "1": "Legitimate"
+    },
+    "feature_count": 18,
+    "sklearn_version": "1.9.0",
+    "creation_timestamp": "2026-09-03T00:37:16.951497",
+    "version": "1.0"
+}

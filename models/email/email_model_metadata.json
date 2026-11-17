@@ -1,0 +1,26 @@
+{
+    "task": "email_spam_detection",
+    "model": "LogisticRegression",
+    "label_mapping": {
+        "0": "Ham",
+        "1": "Spam"
+    },
+    "tfidf_config": {
+        "ngram_range": [
+            1,
+            2
+        ],
+        "min_df": 5,
+        "max_df": 0.95,
+        "sublinear_tf": true
+    },
+    "hyperparameters": {
+        "C": 2,
+        "max_iter": 1000,
+        "random_state": 42
+    },
+    "feature_count": 107362,
+    "sklearn_version": "1.9.0",
+    "creation_timestamp": "2026-09-03T00:37:06.651705",
+    "version": "1.0"
+}

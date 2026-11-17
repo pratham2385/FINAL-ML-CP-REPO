@@ -1,0 +1,5 @@
+Experiment ID,Configuration,Training Samples,Threshold,Vocabulary Size,Test Accuracy,Test Spam Precision,Test Spam Recall,Test Spam F1,Test FPR (%),Test FNR (%),Test ROC-AUC,Test PR-AUC,Test Brier Score,Hard Ham FPs (/250),Hard Ham FPR (%),Hard Ham Mean P(spam),Synthetic Acc (%),Synthetic FPs,Synthetic FNs
+model_a_existing_data,Model A: Existing Data + Variant C (MultinomialNB alpha=0.01),26967,0.43,192930,0.9889,0.9927,0.9816,0.9872,0.55,1.84,0.9989,0.9987,0.0103,98,39.2,0.3791,88.9,1,1
+model_b_augmented_data,Model B: Augmented Data (10.9k Legitimate Added) + Variant C (MultinomialNB alpha=0.01),37890,0.26,268754,0.9849,0.9927,0.9725,0.9825,0.55,2.75,0.9984,0.9983,0.0153,44,17.6,0.1283,94.4,1,0
+model_b2_augmented_uniform_prior,"Model B2: Augmented Data + Variant C (MultinomialNB alpha=0.01, Uniform Prior)",37890,0.43,268754,0.9851,0.9927,0.9729,0.9827,0.55,2.71,0.9984,0.9983,0.0126,45,18.0,0.1562,94.4,1,0
+model_b3_augmented_logistic_reg,Model B3: Augmented Data + Variant C (Logistic Regression C=2.0),37890,0.72,268754,0.9765,0.9946,0.9509,0.9723,0.4,4.91,0.9985,0.9977,0.0161,22,8.8,0.2928,88.9,1,1

@@ -1,0 +1,298 @@
+{
+  "plain_email_test": {
+    "id": 107,
+    "verdict": "Clean / Legitimate",
+    "threat_level": "SAFE",
+    "risk_score": 0.0,
+    "recommended_action": "ALLOW",
+    "email_classification": "Ham",
+    "spam_probability": 0.0,
+    "confidence_percent": 100.0,
+    "extracted_urls": [],
+    "email_analysis": {
+      "label": "Ham",
+      "is_spam": false,
+      "spam_probability": 0.0,
+      "ham_probability": 1.0,
+      "confidence_percent": 100.0,
+      "cleaned_text_preview": "quarterly planning sync hi everyone let s schedule our quarterly planning session next tuesday at 2 pm in conference roo..."
+    },
+    "url_summary": {
+      "total_urls_found": 0,
+      "phishing_urls_count": 0,
+      "phishing_urls": [],
+      "max_phishing_probability": 0.0
+    },
+    "url_details": []
+  },
+  "html_newsletter_test": {
+    "id": 108,
+    "verdict": "Clean / Legitimate",
+    "threat_level": "SAFE",
+    "risk_score": 0.3,
+    "recommended_action": "ALLOW",
+    "email_classification": "Ham",
+    "spam_probability": 0.0032,
+    "confidence_percent": 99.68,
+    "extracted_urls": [],
+    "email_analysis": {
+      "label": "Ham",
+      "is_spam": false,
+      "spam_probability": 0.0032,
+      "ham_probability": 0.9968,
+      "confidence_percent": 99.68,
+      "cleaned_text_preview": "tech weekly digest 128 tech developer weekly digest welcome to this week s edition featuring new open source releases fr..."
+    },
+    "url_summary": {
+      "total_urls_found": 0,
+      "phishing_urls_count": 0,
+      "phishing_urls": [],
+      "max_phishing_probability": 0.0
+    },
+    "url_details": []
+  },
+  "phishing_test": {
+    "id": 109,
+    "verdict": "Phishing Attack Detected",
+    "threat_level": "CRITICAL",
+    "risk_score": 97.5,
+    "recommended_action": "QUARANTINE_AND_BLOCK",
+    "email_classification": "Spam",
+    "spam_probability": 0.9938,
+    "confidence_percent": 99.38,
+    "extracted_urls": [
+      "http://secure-banking-verification-update.com/login"
+    ],
+    "email_analysis": {
+      "label": "Spam",
+      "is_spam": true,
+      "spam_probability": 0.9938,
+      "ham_probability": 0.0062,
+      "confidence_percent": 99.38,
+      "cleaned_text_preview": "urgent your account access has been suspended dear customer abnormal transactions were detected on your card click immed..."
+    },
+    "url_summary": {
+      "total_urls_found": 1,
+      "phishing_urls_count": 1,
+      "phishing_urls": [
+        "http://secure-banking-verification-update.com/login"
+      ],
+      "max_phishing_probability": 0.975
+    },
+    "url_details": [
+      {
+        "url": "http://secure-banking-verification-update.com/login",
+        "label": "Phishing",
+        "is_phishing": true,
+        "phishing_probability": 0.975,
+        "legitimate_probability": 0.025,
+        "confidence_percent": 97.5,
+        "features": {
+          "URLLength": 50,
+          "DomainLength": 38,
+          "IsDomainIP": 0,
+          "NoOfSubDomain": 0,
+          "HasObfuscation": 0,
+          "NoOfObfuscatedChar": 0,
+          "ObfuscationRatio": 0.0,
+          "NoOfLettersInURL": 38,
+          "LetterRatioInURL": 0.76,
+          "NoOfDegitsInURL": 0,
+          "DegitRatioInURL": 0.0,
+          "NoOfEqualsInURL": 0,
+          "NoOfQMarkInURL": 0,
+          "NoOfAmpersandInURL": 0,
+          "NoOfOtherSpecialCharsInURL": 5,
+          "SpacialCharRatioInURL": 0.1,
+          "IsHTTPS": 0,
+          "TLDLength": 3
+        }
+      }
+    ]
+  },
+  "synthetic_suite": [
+    {
+      "filename": "01_legitimate_meeting.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0,
+      "overall_risk_score": 0.0,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "02_legitimate_invoice.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0226,
+      "overall_risk_score": 2.3,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "03_legitimate_password_notice.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0397,
+      "overall_risk_score": 4.0,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "04_legitimate_newsletter.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0425,
+      "overall_risk_score": 4.2,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "05_legitimate_assignment.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0012,
+      "overall_risk_score": 0.1,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "06_spam_prize.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9999,
+      "overall_risk_score": 100.0,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "07_spam_weight_loss.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9999,
+      "overall_risk_score": 100.0,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "08_spam_crypto.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9999,
+      "overall_risk_score": 100.0,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "09_spam_lottery.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 1.0,
+      "overall_risk_score": 100.0,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "10_spam_free_gift.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9999,
+      "overall_risk_score": 100.0,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "11_phishing_account.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9941,
+      "overall_risk_score": 99.4,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "12_phishing_bank.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.8177,
+      "overall_risk_score": 81.8,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "13_phishing_delivery.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.7976,
+      "overall_risk_score": 79.8,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "14_phishing_mailbox.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.4614,
+      "overall_risk_score": 46.1,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "15_phishing_otp.eml",
+      "expected_label": "Spam",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9962,
+      "overall_risk_score": 99.6,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": true
+    },
+    {
+      "filename": "16_mixed_work_offer.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.3251,
+      "overall_risk_score": 32.5,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "17_mixed_account_alert.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Ham",
+      "spam_probability": 0.0924,
+      "overall_risk_score": 9.2,
+      "verdict": "Clean / Legitimate",
+      "recommended_action": "ALLOW",
+      "is_correct": true
+    },
+    {
+      "filename": "18_mixed_sale.eml",
+      "expected_label": "Ham",
+      "predicted_label": "Spam",
+      "spam_probability": 0.9214,
+      "overall_risk_score": 92.1,
+      "verdict": "Spam Email",
+      "recommended_action": "MOVE_TO_JUNK",
+      "is_correct": false
+    }
+  ],
+  "accuracy": 0.9444,
+  "false_positives": 1,
+  "false_negatives": 0
+}

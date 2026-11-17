@@ -1,0 +1,244 @@
+{
+  "dataset_summary": {
+    "total_hard_ham_samples": 250,
+    "all_samples_ground_truth": "Ham (0)"
+  },
+  "model_comparison": {
+    "multinomial_nb": {
+      "threshold": 0.42,
+      "false_positives": 110,
+      "fpr_percent": 44.0,
+      "mean_p_spam": 0.4293
+    },
+    "logistic_regression": {
+      "threshold": 0.75,
+      "false_positives": 95,
+      "fpr_percent": 38.0,
+      "mean_p_spam": 0.573
+    },
+    "linear_svm": {
+      "threshold": 0.77,
+      "false_positives": 102,
+      "fpr_percent": 40.8,
+      "mean_p_spam": 0.5204
+    },
+    "common_false_positives_all_models": 90
+  },
+  "category_breakdown": {
+    "Automated System & Bug Trackers": {
+      "total_emails": 12,
+      "false_positives": 3,
+      "fpr_percent": 25.0,
+      "mean_p_spam": 0.2552,
+      "top_spam_pushing_tokens": [
+        "our newsletter",
+        "banking service",
+        "an apple",
+        "your finances",
+        "free delivery",
+        "great savings"
+      ]
+    },
+    "Financial & Transactional Notices": {
+      "total_emails": 4,
+      "false_positives": 1,
+      "fpr_percent": 25.0,
+      "mean_p_spam": 0.264,
+      "top_spam_pushing_tokens": [
+        "apparel",
+        "brands including",
+        "netnoteinc com",
+        "netnoteinc",
+        "try our",
+        "your 30"
+      ]
+    },
+    "General / Technical Correspondence": {
+      "total_emails": 15,
+      "false_positives": 3,
+      "fpr_percent": 20.0,
+      "mean_p_spam": 0.1911,
+      "top_spam_pushing_tokens": [
+        "mail go",
+        "101",
+        "go",
+        "mail",
+        "co",
+        "jenna"
+      ]
+    },
+    "HTML Marketing Newsletters & E-zines": {
+      "total_emails": 203,
+      "false_positives": 96,
+      "fpr_percent": 47.3,
+      "mean_p_spam": 0.4606,
+      "top_spam_pushing_tokens": [
+        "nbsp",
+        "nbsp nbsp",
+        "149",
+        "rand",
+        "remove html",
+        "html content"
+      ]
+    },
+    "Mailing List Discussions & Digests": {
+      "total_emails": 13,
+      "false_positives": 6,
+      "fpr_percent": 46.2,
+      "mean_p_spam": 0.4478,
+      "top_spam_pushing_tokens": [
+        "nbsp",
+        "color ffffff",
+        "nbsp nbsp",
+        "ffffff",
+        "income living",
+        "hover"
+      ]
+    },
+    "Technical & Corporate Announcements": {
+      "total_emails": 3,
+      "false_positives": 1,
+      "fpr_percent": 33.3,
+      "mean_p_spam": 0.3349,
+      "top_spam_pushing_tokens": [
+        "helvetica sans",
+        "verdana",
+        "family verdana",
+        "verdana arial",
+        "arial helvetica",
+        "font family"
+      ]
+    }
+  },
+  "culprit_analysis": {
+    "body_primary_driver_count": 110,
+    "body_primary_driver_pct": 100.0,
+    "subject_primary_driver_count": 66,
+    "subject_primary_driver_pct": 60.0,
+    "both_driver_count": 66,
+    "has_raw_html_count": 96,
+    "has_raw_html_pct": 87.27
+  },
+  "representative_examples": [
+    {
+      "message_uid": "sa_hard_ham_00001.7c7d6921e671bbe18ebb5f893cd9bb35",
+      "subject": "Personal Finance: Resolutions You Can Keep",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.9991,
+      "p_spam_lr": 0.9113,
+      "p_spam_svm": 0.9847,
+      "top_features": [
+        "save big (0.3735)",
+        "60 second (0.3571)",
+        "your finances (0.3546)",
+        "compare rates (0.2268)",
+        "unsubscribe here (0.2177)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00006.3409dec8ca4fcf2d6e0582554473b5c9",
+      "subject": "Virtueller Messetag der jobfair24 am Mittwoch, 03. Juli 2002",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.9991,
+      "p_spam_lr": 0.7978,
+      "p_spam_svm": 0.9362,
+      "top_features": [
+        "sie sich (0.6211)",
+        "einfach (0.5213)",
+        "einfach hier (0.4981)",
+        "hier (0.4026)",
+        "ohne (0.3449)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00007.d24e99a602ee7fb442714c0d448cd08e",
+      "subject": "F2M - Ihre kostenlose Faxnummer - Newsletter",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 1.0,
+      "p_spam_lr": 0.9846,
+      "p_spam_svm": 0.9999,
+      "top_features": [
+        "sie sich (0.8067)",
+        "foto (0.6953)",
+        "angebot (0.4997)",
+        "hier (0.4206)",
+        "nbsp (0.3707)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00008.b42457819236bee543bebffb61b91e44",
+      "subject": "Lindows.com: Michael's Minute: Lindows.com Report Card",
+      "category": "Mailing List Discussions & Digests",
+      "p_spam_mnb": 0.7106,
+      "p_spam_lr": 0.632,
+      "p_spam_svm": 0.4584,
+      "top_features": [
+        "walmart (0.3365)",
+        "software titles (0.2917)",
+        "nbsp (0.2275)",
+        "computer at (0.1947)",
+        "service mark (0.193)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00009.ddea79a02a9978cb3dafef3c05ff37a6",
+      "subject": "Jobs, Jobs, Jobs: HEUTE, 03.07.02 ist virtueller Messetag der jobfair24!!!",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.9999,
+      "p_spam_lr": 0.9275,
+      "p_spam_svm": 0.9959,
+      "top_features": [
+        "keine (0.7812)",
+        "sie sich (0.7551)",
+        "hallo (0.5022)",
+        "einfach (0.464)",
+        "unserer (0.4628)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00012.58a866f18474d94989984958e1789df4",
+      "subject": "Save an extra $50 on the iPaq 3835 PDA (CNET SHOPPER)",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.9992,
+      "p_spam_lr": 0.8523,
+      "p_spam_svm": 0.8755,
+      "top_features": [
+        "nbsp (0.673)",
+        "nbsp nbsp (0.6628)",
+        "nbsp just (0.4458)",
+        "149 (0.4366)",
+        "enter to (0.398)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00013.15135df1ed8198dbea3fcd0cb8d071ae",
+      "subject": "This week: Deck, Tex-Edit Plus, Boom",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.6008,
+      "p_spam_lr": 0.7226,
+      "p_spam_svm": 0.6634,
+      "top_features": [
+        "pick of (0.3225)",
+        "customize your (0.2049)",
+        "xga (0.1882)",
+        "deluxe (0.1855)",
+        "download click (0.1834)"
+      ]
+    },
+    {
+      "message_uid": "sa_hard_ham_00016.47e87c7e7f6c78738ad4fb654dbdaaac",
+      "subject": "[Lockergnome Windows Daily]  Brilliant Mistakes",
+      "category": "HTML Marketing Newsletters & E-zines",
+      "p_spam_mnb": 0.8684,
+      "p_spam_lr": 0.8317,
+      "p_spam_svm": 0.8938,
+      "top_features": [
+        "nbsp (0.3446)",
+        "nbsp nbsp (0.3159)",
+        "quot (0.2942)",
+        "fully licensed (0.2359)",
+        "nbsp our (0.2121)"
+      ]
+    }
+  ]
+}
